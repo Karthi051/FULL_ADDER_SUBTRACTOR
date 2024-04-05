@@ -44,12 +44,41 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:212223230101
 */
+```
+
+//full adder
+module fulladd(sum,cout,a,b,cin);
+   output sum;
+	output cout;
+	input a;
+	input b;
+	input cin;
+	
+	      //Internal nets
+ wire sl,cl,c2;
+
+  //Instantiate logic gate primitives
+ xor(sl,a,b);
+ and(cl,a,b);
+ xor(sum,sl,cin);
+ and(c2,sl,cin);
+ or(cout,c2,cl);
+ 
+ endmodule
+
+```
+![image](https://github.com/Karthi051/FULL_ADDER_SUBTRACTOR/assets/148327224/c6a529dc-9349-4230-9134-ac9cf544f696)
+
 
 **RTL Schematic**
+![image](https://github.com/Karthi051/FULL_ADDER_SUBTRACTOR/assets/148327224/9e607d8e-6621-47d9-94e9-d7476b0c94ce)
+
 
 **Output Timing Waveform**
+![image](https://github.com/Karthi051/FULL_ADDER_SUBTRACTOR/assets/148327224/020bc812-30c7-4063-873e-6daca5609a23)
+
 
 **Result:**
 
